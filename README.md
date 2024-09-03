@@ -32,3 +32,15 @@ Cost: Are you willing to pay more for serverless cloud costs?
 
 AWS provides an ecosystem for serverless functions called Lambda. AWS Lambda is useful for gluing different components within an AWS deployment together since it supports a rich set of triggers for function inputs and outputs. While Lambda does provide a powerful tool for building data pipelines, the current Python development environment is a bit clunkier than GCP.
 
+Containers:
+When deploying data science models, it’s important to be able to reproduce the same environment used both for training and serving. In Models as Web Endpoints, I used the same machine for both environments, and in Models as Serverless Functions I used a requirements.txt file to ensure that the serverless ecosystem used for serving the model matched our development environment. Container systems such as Docker provide a tool for building reproducible environments, and they are much lighter weight than alternative approaches such as virtual machines.
+
+The idea of a container is that it is an isolated environment in which you can set up the dependencies that you need in order to perform a task. The goal of a container framework is to provide isolation between instances with a lightweight footprint. With a container framework, you specify the dependencies that your code needs and let the framework handle the legwork of managing different execution environments.
+
+Some examples of tasks that are performed in a container are:
+performing ETL work
+serving ML models
+standing up APIs
+hosting interactive web applications
+
+Docker  is the de facto standard for containers, and there is substantial tooling built on this platform.
